@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivered</title>
+</head>
+<style>
+    .success{
+        background-color: #FF73003F;
+        color: #333;
+        font-family: Arial, Helvetica, sans-serif;
+        width: 700px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 10px;
+    }
+
+    .success-image img{
+        margin: 14px 45% 0px;
+    }
+
+    .title h2{
+        text-align: center;
+    }
+
+    .success-description p{
+        text-align: center;
+        padding-bottom: 15px;
+    }
+
+    .success-button button{
+        margin: 10px 40%;
+        padding: 8px 48px;
+        font-size: 18px;
+        background-color: #ff7300a2;
+        border: none;
+        color: #fff;
+        border-radius: 15px;
+    }
+
+</style>
+<body>
+    <div class="success"  id="ok">
+        <div class="success-image">
+            <img src="../assets/icons/tick.png" alt="check">
+        </div>
+        <div class="success-content">
+            <div class="title">
+                <h2>SUCCESS!</h2>
+            </div>
+            <div class="success-description">
+                <p>Your order has been placed succesfully</p>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script>
+        var block = document.getElementById("ok");
+
+        function disappear(){
+            ok.style= "position:relative;top:-500px";
+            window.location.href = '../private/products/productspublic.php';
+        }
+    </script>
+</body>
+</html>

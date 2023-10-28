@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartBidhaa</title>
+    <style>
+        *{
+            scroll-behavior: smooth;
+        }
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /*for the navbar*/
+        .navbar{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom:100px;
+            border-bottom: 5px solid #FF73007A;
+        }
+
+        .logo{
+            padding-left: 12px;
+        }
+
+        .navlinks{
+            width: 800px;
+            margin-top: 8px;
+            float:right;
+        }
+
+        .navlinks ul{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            list-style: none;
+        }
+
+        .navlinks ul li {
+            text-align: right;
+        }
+
+        .navlinks ul li img{
+            height: 20px;
+            width:20px;
+            float: left;
+            padding-right:3px;
+        }
+
+        .navlinks ul li a, .navlinks ul li a:visited{
+            text-decoration: none;
+            font-size: 18px;
+            transition: .4s ease-in-out;
+            color:#333;
+        }
+
+        .navlinks ul li a.login{
+           color: #ff7300;
+           padding-left: 5px;
+        }
+
+        .navlinks ul li a:hover,.logo{
+            color:#ff7300b0;
+        }
+
+        /*for the hero section*/
+        .hero-section{
+            display:flex;
+            justify-content: space-between;
+        }
+        .hero-contents h1{
+            margin-top: 50px;
+            margin-left:20px;
+            font-size: 42px;
+        }
+
+        .hero-contents p{
+            font-size: 24px;
+            margin-left: 20px;
+        }
+
+        .hero-image{
+            margin-right: 20px;
+            margin-left: 28px;
+            height:680px;
+            max-width: 680px;
+        }
+
+        .hero-image img{
+            width: 100%;
+        }
+
+        /*for the about section*/
+
+        .about-section{
+            background-color: #ff73009a;
+            text-align: center;
+        }
+
+        .about-title h1{
+            text-align: center;
+            color: #fff;
+            padding-top: 50px;
+            font-size: 42px;
+        }
+
+        .about-title p{
+            text-align: center;
+            color: #fff;
+            width: 80%;
+            margin:10px auto;
+            font-size: 20px;
+        }
+
+        .row{
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 30px;
+            height: 400px;
+        }
+
+        .column{
+            max-width: 20%;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            margin: 10px 20px;
+        }
+
+
+        .column img{
+            width: 100%;
+            height: 280px;
+            margin-top: 12px;
+            border-radius: 20px;
+            transition: .4s ease-in-out;
+        }
+
+        .column img:hover{
+            /* box-shadow: 1px 2px 3px 4px #ff73003f; */
+            filter: brightness(70%);
+            cursor: pointer;
+        }
+
+        /* for the separator */
+        .separator{
+            margin: auto;
+            text-align: center;
+            font-size: 52px;
+            font-family: monospace;
+            color: #ff7300b0;
+        }
+
+        /* for the call-to-action */
+
+        .call-to-action{
+            margin-bottom: 90px;
+        }
+
+        .call-to-action-title h1{
+            text-align: center;
+            font-size: 42px;
+        }
+
+        .call-to-action-content{
+            display: flex;
+            border: 5px solid #ff7300a9;
+            border-radius: 30px;
+        }
+
+        .call-to-action-button{
+            float: left;
+            width: 20%;
+            padding:150px 80px;
+            text-align: center;
+        }
+
+        .call-to-action-button a{
+            background-color: #ff7300;
+            color: #fff;
+            padding:14px 36px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 24px;
+            transition: .4s ease-in-out;
+        }
+
+        .call-to-action-button a:hover{
+            background-color: #333;
+            color:#ff7300
+        }
+
+        .call-to-action-description{
+            float: right;
+            width: 70%;
+            margin: 2.5%;
+            font-size: 24px;
+        }
+
+        /* for other devices */
+
+        /*for literally small-devices*/
+        @media (max-width:532px){
+            
+            .navlinks{
+                width: 400px;
+            }
+
+            .logo{
+                margin-top: 19px;
+                font-size: 5px;
+            }
+
+            .navlinks ul li img{
+                height: 1px;
+                width:1px;
+                float: left;
+                padding-right:3px;
+                visibility: hidden;
+            }
+
+            .navlinks ul li a, .navlinks ul li a:visited{
+                font-size: 9px;
+                transition: .4s ease-in-out;
+                color:#333;
+            }
+
+            .navlinks ul li a.login{
+                color: #ff7300;
+                padding-left: 1px;
+            }
+
+            .navlinks ul li a:hover,.logo{
+                color:#ff7300b0;
+            }
+
+            /*for the hero section of very small screens*/
+            
+            .hero-contents h1{
+                font-size: 16px;
+                margin-top: -8px;
+            }
+
+            .hero-contents p{
+                font-size: 10px;
+                margin-left: 20px;
+            }
+
+            .hero-image{
+                margin-right: 20px;
+                margin-left: 28px;
+                height:230px;
+                max-width: 230px;
+            }
+
+            .hero-image img{
+                width: 100%;
+                
+            }
+
+            /*for the literally small sized screens about section*/
+            .about-title h1{
+                text-align: center;
+                color: #fff;
+                padding-top: 50px;
+                font-size: 18px;
+        }
+
+            .about-title p{
+                text-align: center;
+                color: #fff;
+                width: 80%;
+                margin:10px auto;
+                font-size: 13px;
+        }
+
+
+            .row{
+                display: flex;
+                justify-content: space-evenly;
+                margin-top: 30px;
+                flex-direction: column;
+                flex-wrap: wrap;
+                height: 120px;
+        }
+         
+            .column{
+                max-width: 15%;
+                height: 100px;
+                overflow-x: hidden;
+                display: flex;
+                flex-direction: column;
+                margin: 10px 20px;
+        }
+
+        /* for the literally small devices separator */
+        .separator{
+                margin: auto;
+                text-align: center;
+                font-size: 22px;
+                font-family: monospace;
+                color: #ff7300b0;
+        }
+
+            /*for the literally small devices call-to-action*/
+            .call-to-action-title h1{
+                text-align: center;
+                font-size: 18px;
+        }
+
+            .call-to-action-description{
+                float: right;
+                width: 85%;
+                margin: 2.5%;
+                font-size: 13px;
+        }
+
+            .call-to-action-button a{
+                background-color: #ff7300;
+                color: #fff;
+                padding:10px 8px;
+                text-decoration: none;
+                border-radius: 30px;
+                font-size: 13px;
+                transition: .4s ease-in-out;
+        }
+
+             .call-to-action-button{
+                float: left;
+                width: 55%;
+                padding:100px 10px;
+                text-align: center;
+        }
+
+        /*for literally small devices footer section*/
+
+        .footer .logo{
+            font-size:8px;
+        }
+
+        .footer-row .send-reviews{
+            float: right;
+            margin-top: 28px;
+            font-size: 8px;
+        }
+
+        .footer-row .send-reviews a{
+            text-decoration: none;
+            margin-right: 32px;
+            font-size: 10px;
+            background-color: #fff;
+            border-radius: 30px;
+            color: #ff7300c4;
+            padding: 10px 12px;
+        }
+
+        .social-media{
+            width: 50%;
+            margin: 10px auto;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .social-media .media{
+            width: 8px;
+            height: 8px;
+        }
+
+        .footer h2{
+            font-size: 8px;
+        }
+
+
+
+        }
+
+
+        /*for the phones and small sized screens*/
+        @media(min-width:533px) and (max-width:747px){
+            /*for the navbar*/
+         
+            .navlinks{
+                width: 500px;
+            }
+
+            .navlinks ul{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                list-style: none;
+            }
+
+            .logo{
+                font-size: 10px;
+            }
+
+            .navlinks ul li img{
+                height: 15px;
+                width:15px;
+                float: left;
+                padding-right:3px;
+            }
+
+            .navlinks ul li a, .navlinks ul li a:visited{
+                font-size: 12px;
+                transition: .4s ease-in-out;
+                color:#333;
+            }
+
+            .navlinks ul li a.login{
+                color: #ff7300;
+                padding-left: 5px;
+            }
+
+            .navlinks ul li a:hover,.logo{
+                color:#ff7300b0;
+            }
+
+            /*for the hero section*/
+            
+            .hero-contents h1{
+                font-size: 24px;
+                margin-top: -8px;
+            }
+
+            .hero-contents p{
+                font-size: 12px;
+                margin-left: 20px;
+            }
+
+            .hero-image{
+                margin-right: 20px;
+                margin-left: 28px;
+                height:380px;
+                max-width: 380px;
+            }
+
+            .hero-image img{
+                width: 100%;
+                
+            }
+
+            /*for the small sized screens about section*/
+            .about-title h1{
+                text-align: center;
+                color: #fff;
+                padding-top: 50px;
+                font-size: 24px;
+        }
+
+            .about-title p{
+                text-align: center;
+                color: #fff;
+                width: 80%;
+                margin:10px auto;
+                font-size: 13px;
+        }
+
+
+            .row{
+                display: flex;
+                justify-content: space-evenly;
+                margin-top: 30px;
+                flex-direction: column;
+                flex-wrap: wrap;
+                height: 200px;
+        }
+         
+            .column{
+                max-width: 18%;
+                height: 200px;
+                overflow-x: hidden;
+                display: flex;
+                flex-direction: column;
+                margin: 10px 20px;
+        }
+
+        /* for the separator */
+        .separator{
+                margin: auto;
+                text-align: center;
+                font-size: 22px;
+                font-family: monospace;
+                color: #ff7300b0;
+        }
+
+            /*for the tablet call-to-action*/
+            .call-to-action-title h1{
+                text-align: center;
+                font-size: 24px;
+        }
+
+            .call-to-action-description{
+                float: right;
+                width: 85%;
+                margin: 2.5%;
+                font-size: 13px;
+        }
+
+            .call-to-action-button a{
+                background-color: #ff7300;
+                color: #fff;
+                padding:16px 18px;
+                text-decoration: none;
+                border-radius: 30px;
+                font-size: 13px;
+                transition: .4s ease-in-out;
+        }
+
+             .call-to-action-button{
+                float: left;
+                width: 45%;
+                padding:100px 40px;
+                text-align: center;
+        }
+
+        /*for the tablet's footer section*/
+
+        .footer .logo{
+            font-size:12px;
+        }
+
+        .footer-row .send-reviews{
+            float: right;
+            margin-top: 28px;
+            font-size: 12px;
+        }
+
+        .footer-row .send-reviews a{
+            text-decoration: none;
+            margin-right: 32px;
+            font-size: 12px;
+            background-color: #fff;
+            border-radius: 30px;
+            color: #ff7300c4;
+            padding: 10px 12px;
+        }
+
+        .social-media{
+            width: 50%;
+            margin: 10px auto;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .social-media .media{
+            width: 10px;
+            height: 10px;
+        }
+
+
+
+        }
+
+
+
+        /*for the tablet*/
+        @media (min-width:748px) and (max-width:1292px) {
+         /*for the navbar*/
+         
+            .navlinks{
+                width: 500px;
+            }
+
+            .navlinks ul{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                list-style: none;
+                margin-top: 18px;
+            }
+
+            .logo{
+                font-size: 16px;
+            }
+
+            .navlinks ul li img{
+                height: 15px;
+                width:15px;
+                float: left;
+                padding-right:3px;
+            }
+
+            .navlinks ul li a, .navlinks ul li a:visited{
+                font-size: 14px;
+                transition: .4s ease-in-out;
+                color:#333;
+            }
+
+            .navlinks ul li a.login{
+                color: #ff7300;
+                padding-left: 5px;
+            }
+
+            .navlinks ul li a:hover,.logo{
+                color:#ff7300b0;
+            }
+
+            /*for the hero section*/
+            
+            .hero-contents h1{
+                font-size: 32px;
+                margin-top: -20px;
+            }
+
+            .hero-contents p{
+                font-size: 18px;
+                margin-left: 20px;
+            }
+
+            .hero-image{
+                margin-right: 20px;
+                margin-left: 28px;
+                height:480px;
+                max-width: 380px;
+            }
+
+            .hero-image img{
+                width: 100%;
+                
+            }
+
+            /*for the tablet's about section*/
+            .about-title h1{
+                text-align: center;
+                color: #fff;
+                padding-top: 50px;
+                font-size: 32px;
+        }
+
+            .about-title p{
+                text-align: center;
+                color: #fff;
+                width: 80%;
+                margin:10px auto;
+                font-size: 18px;
+        }
+
+
+            .row{
+                display: flex;
+                justify-content: space-evenly;
+                margin-top: 30px;
+                flex-direction: column;
+                flex-wrap: wrap;
+                height: 200px;
+        }
+         
+            .column{
+                max-width: 20%;
+                height: 200px;
+                overflow-x: hidden;
+                display: flex;
+                flex-direction: column;
+                margin: 10px 20px;
+        }
+
+            /* for the separator */
+            .separator{
+                margin: auto;
+                text-align: center;
+                font-size: 42px;
+                font-family: monospace;
+                color: #ff7300b0;
+        }
+
+            /*for the tablet call-to-action*/
+            .call-to-action-title h1{
+                text-align: center;
+                font-size: 32px;
+        }
+
+            .call-to-action-description{
+                float: right;
+                width: 70%;
+                margin: 2.5%;
+                font-size: 18px;
+        }
+
+            .call-to-action-button a{
+                background-color: #ff7300;
+                color: #fff;
+                padding:16px 12px;
+                text-decoration: none;
+                border-radius: 30px;
+                font-size: 18px;
+                transition: .4s ease-in-out;
+        }
+
+             .call-to-action-button{
+                float: left;
+                width: 35%;
+                padding:150px 80px;
+                text-align: center;
+        }
+
+        /*for the tablet's footer section*/
+
+        .footer .logo{
+            font-size:15px;
+        }
+
+        .footer-row .send-reviews{
+            float: right;
+            margin-top: 28px;
+            font-size: 18px;
+        }
+
+        .footer-row .send-reviews a{
+            text-decoration: none;
+            margin-right: 32px;
+            font-size: 18px;
+            background-color: #fff;
+            border-radius: 30px;
+            color: #ff7300c4;
+            padding: 10px 12px;
+        }
+
+        .social-media{
+            width: 50%;
+            margin: 20px auto;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .social-media .media{
+            width: 20px;
+            height: 20px;
+        }
+
+    }
+
+        /* for the footer */
+        .footer{
+            padding-top: 90px;
+            background-color: #ff7300a9;
+            margin-bottom: -20px;
+        }
+
+        .footer .logo{
+            padding-left: 18px;
+            color: #fff;
+            font-weight: 800;
+            margin-bottom:-18px;
+        }
+
+        .footer-row{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .footer-row .send-reviews{
+            float: right;
+            margin-top: 28px;
+            font-size: 24px;
+        }
+
+        .footer-row .send-reviews a{
+            text-decoration: none;
+            margin-right: 32px;
+            background-color: #fff;
+            border-radius: 30px;
+            color: #ff7300c4;
+            padding: 14px 18px;
+        }
+
+        .social-media{
+            width: 50%;
+            margin: 20px auto;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .social-media .media{
+            width: 50px;
+            height: 50px;
+        }
+
+        .social-media .media img{
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <!--navigation bar-->
+    
+    <div class="navbar">
+        <div class="logo">
+            <h1>SmartBidhaa</h1>
+        </div>
+        <div class="navlinks">
+            <ul>
+                <li><img src="../assets/icons/home.png" alt="home"><a href="index.html">Home</a></li>
+                <li><img src="../assets/icons/about.png" alt="about"><a href="#about-section">About Us</a></li>
+                <li><img src="../assets/icons/file-small.png" alt="order"><a href="placeorder.php">Place Order</a></li>
+                <li><img src="../assets/icons/contacts.png" alt="contacts"><a href="#footer">Contacts</a></li>
+                <li><img src="../assets/icons/user.png" alt="login"><a href="../private/login/index.php" class="login">Login as Admin</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!---hero section-->
+    <div class="hero-section">
+        <div class="hero-contents">
+            <h1><span style="color: #ff7300;">SmartBidhaa</span>: Bringing customers <span style="color: #ff7300;">&</span><br> the Business Together</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro esse adipisci facere explicabo labore sequi doloremque, voluptate reiciendis quam placeat architecto vitae dolorum blanditiis consequatur corporis ea nam sed. Fugiat.</p>
+        </div>
+        <div class="hero-image">
+            <img src="../assets/images/rachit-tank-2cFZ_FB08UM-unsplash.jpg" alt="">
+        </div>
+    </div>
+
+    <!--about-section-->
+    <div class="about-section" id="about-section">
+        <div class="about-title">
+            <h1>About Us</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, excepturi iure, alias adipisci fuga quod a minus quidem aliquid illum aut blanditiis accusantium cupiditate quam magnam qui delectus, quisquam harum.</p>
+        </div>
+        <div class="row">
+            <div class="column">
+                <img src="../assets/images/c-d-x-PDX_a_82obo-unsplash.jpg" alt="">
+            </div>
+            <div class="column">
+                <img src="../assets/images/solen-feyissa-mO-_iF_FkCk-unsplash.jpg" alt="">
+            </div>
+            <div class="column">
+                <img src="../assets/images/darryl-low-M85fe7-_nnA-unsplash.jpg" alt="">
+            </div>
+            <div class="column">
+                <img src="../assets/images/giorgio-trovato-K62u25Jk6vo-unsplash.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    
+    <!--separator-->
+    <div class="separator">
+        <h1>...</h1>
+    </div>
+
+    <!--call-to-action section-->
+    <div class="call-to-action">
+        <div class="call-to-action-title">
+            <h1>We <span style="color: #ff7300;">Serve</span> the our <span style="color: #ff7300;">Customers</span> the Best</h1>
+        </div>
+        <div class="call-to-action-content">
+            <div class="call-to-action-button">
+                    <a href="../private/products/productspublic.php">See our Products</a>
+            </div>
+            <div class="call-to-action-description">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est iure, at laboriosam facilis quod expedita corrupti aspernatur nesciunt exercitationem. Ipsa sed doloribus quo error animi, sunt cum officiis quidem iusto!Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus inventore corporis quas ipsum, id autem suscipit et expedita harum sequi a error voluptatem? Illum quae dolores adipisci rem perferendis tempore!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus qui accusamus esse sunt facilis, aliquam pariatur! Numquam ipsam, sunt ipsa atque iste, deleniti perspiciatis fuga incidunt corporis labore dolores provident.</p>
+            </div>
+        </div>
+    </div>
+
+    <!--footer-->
+    <div class="footer" id="footer">
+        <div class="footer-row">
+            <div class="logo">
+                <h1>SmartBidhaa</h1>
+            </div>
+            <div class="send-reviews">
+                <a href="#">Send Reviews</a>
+            </div>
+        </div>
+        <div class="social-media">
+            <div class="media">
+                <a href="#"><img src="../assets/icons/facebook.png" alt="facebook"></a>
+            </div>
+            <div class="media">
+                <a href="#"><img src="../assets/icons/instagram.png" alt="instagram"></a>
+            </div>
+            <div class="media">
+                <a href="#"><img src="../assets/icons/telegram.png" alt="telegram"></a>
+            </div>
+            <div class="media">
+                <a href="#"><img src="../assets/icons/linkedin.png" alt="linkedin"></a>
+            </div>
+            <div class="media">
+                <a href="#"><img src="../assets/icons/tiktok.png" alt="tiktok"></a>
+            </div>
+        </div>
+        <h2 style="text-align: center;color: #fff;padding-top: 24px;padding-bottom: 24px;">All Rights Reserved</h2>
+    </div>
+</body>
+</html>
